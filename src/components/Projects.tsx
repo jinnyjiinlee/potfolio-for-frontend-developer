@@ -75,7 +75,7 @@ const Projects = () => {
         ease: "easeOut"
       }
     }
-  };
+  } as const;
 
   return (
     <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-800 relative overflow-hidden">

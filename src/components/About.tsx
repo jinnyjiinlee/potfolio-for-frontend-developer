@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const stats = [
     { number: '3+', label: '개발 경력', icon: '🚀' },

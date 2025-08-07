@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 const Skills = () => {
   const ref = useRef(null);
@@ -76,11 +76,11 @@ const Skills = () => {
       width: `${level}%`,
       transition: {
         duration: 1.5,
-        ease: "easeOut",
+        ease: "easeOut" as const,
         delay: 0.5
       }
     })
-  };
+  } as const;
 
   return (
     <section id="skills" className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">

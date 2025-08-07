@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -95,7 +94,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="flex flex-wrap justify-center gap-4 mb-12"
             >
-              {floatingCards.map((card, index) => (
+              {floatingCards.map((card) => (
                 <motion.div
                   key={card.text}
                   initial={{ opacity: 0, scale: 0.8, y: 50 }}
@@ -140,8 +139,6 @@ const Hero = () => {
                 href="#projects"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                onHoverStart={() => setIsHovered(true)}
-                onHoverEnd={() => setIsHovered(false)}
                 className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <motion.div

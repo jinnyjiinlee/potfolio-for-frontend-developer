@@ -5,8 +5,7 @@ import { useRef, useState } from 'react';
 
 const Skills = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const skillCategories = [
     {
@@ -139,12 +138,10 @@ const Skills = () => {
           animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
         >
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories.map((category) => (
             <motion.div
               key={category.title}
               variants={itemVariants}
-              onHoverStart={() => setActiveCategory(category.title)}
-              onHoverEnd={() => setActiveCategory(null)}
               className="group relative"
             >
               <motion.div
